@@ -1,0 +1,28 @@
+name: "Superblocks Sync"
+description: "Sync main branch app snapshots into Superblocks DBFS"
+inputs:
+  token:
+    description: "The Superblocks access token to use"
+    required: true
+  domain:
+    description: "The Superblocks domain where resources are hosted"
+    default: "app.superblocks.com"
+  path:
+    description: "The relative path from repo root to the sync root directory."
+    default: "."
+  sha:
+    description: "Commit SHA to sync (defaults to HEAD)."
+    default: "HEAD"
+  cli_version:
+    description: "Superblocks CLI version to install."
+    default: "latest"
+
+runs:
+  using: "docker"
+  image: "docker://superblocksteam/sync-action:v1"
+  env:
+    SUPERBLOCKS_TOKEN: ${{ inputs.token }}
+    SUPERBLOCKS_DOMAIN: ${{ inputs.domain }}
+    SUPERBLOCKS_PATH: ${{ inputs.path }}
+    SUPERBLOCKS_SYNC_SHA: ${{ inputs.sha }}
+    SUPERBLOCKS_CLI_VERSION: ${{ inputs.cli_version }}
