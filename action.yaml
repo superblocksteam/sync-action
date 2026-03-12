@@ -15,7 +15,7 @@ inputs:
     default: "HEAD"
   cli_version:
     description: "Superblocks CLI version to install."
-    default: "latest"
+    default: "beta"
 
 runs:
   using: "docker"
