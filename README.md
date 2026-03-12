@@ -46,7 +46,7 @@ jobs:
 | domain | string | false | `"app.superblocks.com"` | Superblocks domain (host or full URL) |
 | path | string | false | `"."` | Relative path from repo root to sync root |
 | sha | string | false | `"HEAD"` | Git SHA to sync from `main` snapshot |
-| cli_version | string | false | `"latest"` | Superblocks CLI version to install |
+| cli_version | string | false | `"beta"` | Superblocks CLI version to install |
 
 ## Outputs
 
